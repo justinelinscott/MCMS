@@ -12,6 +12,8 @@
 		D5928B1422947E73007F6264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5928B1222947E73007F6264 /* Main.storyboard */; };
 		D5928B1622947E74007F6264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5928B1522947E74007F6264 /* Assets.xcassets */; };
 		D5928B1922947E74007F6264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5928B1722947E74007F6264 /* LaunchScreen.storyboard */; };
+		D5928B2122947F03007F6264 /* MagicalCreatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928B2022947F03007F6264 /* MagicalCreatures.swift */; };
+		D5928B23229482CA007F6264 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928B22229482CA007F6264 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D5928B1522947E74007F6264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5928B1822947E74007F6264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5928B1A22947E74007F6264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5928B2022947F03007F6264 /* MagicalCreatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalCreatures.swift; sourceTree = "<group>"; };
+		D5928B22229482CA007F6264 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,9 @@
 			children = (
 				D5928B0E22947E73007F6264 /* AppDelegate.swift */,
 				D5928B1022947E73007F6264 /* ViewController.swift */,
+				D5928B22229482CA007F6264 /* DetailViewController.swift */,
 				D5928B1222947E73007F6264 /* Main.storyboard */,
+				D5928B2022947F03007F6264 /* MagicalCreatures.swift */,
 				D5928B1522947E74007F6264 /* Assets.xcassets */,
 				D5928B1722947E74007F6264 /* LaunchScreen.storyboard */,
 				D5928B1A22947E74007F6264 /* Info.plist */,
@@ -137,6 +143,8 @@
 			files = (
 				D5928B1122947E73007F6264 /* ViewController.swift in Sources */,
 				D5928B0F22947E73007F6264 /* AppDelegate.swift in Sources */,
+				D5928B2122947F03007F6264 /* MagicalCreatures.swift in Sources */,
+				D5928B23229482CA007F6264 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
