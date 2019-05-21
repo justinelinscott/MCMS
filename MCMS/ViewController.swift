@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let name1 = "dragon"
         let name2 = "griffon"
         let name3 = "dinosaur"
-        creatures = [MagicalCreatures(name: name1, detail: "purple", image: UIImage(named: "dragon")!), MagicalCreatures(name: name2, detail: "yellow", image: UIImage(named: "griffon")!), MagicalCreatures(name: name3, detail: "blue", image: UIImage(named: "dinosaur")!)]
+        creatures = [MagicalCreatures(name: name1, detail: "purple", image: UIImage(named: "dragon")!, accessories: ["Ill Gotten Gold", "Fire"]), MagicalCreatures(name: name2, detail: "yellow", image: UIImage(named: "griffon")!, accessories: ["feathers", "wings"]), MagicalCreatures(name: name3, detail: "blue", image: UIImage(named: "dinosaur")!, accessories: ["sword", "shoes"])]
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {

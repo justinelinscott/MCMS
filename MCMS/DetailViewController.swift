@@ -8,13 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var editTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     var creature: MagicalCreatures!
 
@@ -25,6 +26,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         saveButton.isHidden = true
         title = creature.name
         detailLabel.text = creature.detail
+        detailLabel.sizeToFit()
+        imageView.image = creature.image
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
@@ -56,4 +59,27 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            creature.image = image
+            imageView.image = creature.image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if creature.accessories == nil {
+            return 0
+        }
+        else {
+            return creature.accessories!.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! UITableViewCell
+        cell.textLabel?.text = creature.accessories![indexPath.row]
+        
+        return cell
+    }
 }
