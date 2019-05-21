@@ -8,10 +8,11 @@
 
 import UIKit
 
-class BattleViewController: UIViewController{
+class BattleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     
     @IBOutlet weak var firstTableView: UITableView!
-    @IBOutlet weak var secondTableView: UITableView!
+
     
     
     var creatures: [MagicalCreatures] = []
@@ -19,10 +20,19 @@ class BattleViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return creatures.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
+        let creature = creatures[indexPath.row]
+        cell.textLabel?.text = creature.name
+        return cell
+    }
     
 
    

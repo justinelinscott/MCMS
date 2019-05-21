@@ -53,6 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let creature = creatures[indexOfCreature]
         dvc.creature = creature
         } else if let dvc = segue.destination as? BattleViewController{
+            let creature = creatures[indexOfCreature]
             dvc.creatures = creatures
         }
     }
