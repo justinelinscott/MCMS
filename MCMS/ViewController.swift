@@ -11,22 +11,25 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    @IBOutlet weak var newCreatureTextField: UITextField!
+    @IBOutlet weak var newCreatureDetailTextField: UITextField!
+    @IBOutlet weak var newCreatureNameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     var creatures: [MagicalCreatures] = []
+    var indexOfCreature = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let name1 = "dragon"
         let name2 = "griffon"
         let name3 = "dinosaur"
-        creatures = [MagicalCreatures(name: name1), MagicalCreatures(name: name2), MagicalCreatures(name: name3)]
+        creatures = [MagicalCreatures(name: name1, detail: "purple"), MagicalCreatures(name: name2, detail: "yellow"), MagicalCreatures(name: name3, detail: "blue")]
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        creatures.append(MagicalCreatures(name: newCreatureTextField.text!))
-        newCreatureTextField.text = ""
+        creatures.append(MagicalCreatures(name: newCreatureNameTextField.text!, detail: newCreatureDetailTextField.text!))
+        newCreatureNameTextField.text = ""
+        newCreatureDetailTextField.text = ""
         tableView.reloadData()
     }
     
@@ -40,15 +43,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
         let creature = creatures[indexPath.row]
         cell.textLabel?.text = creature.name
+        cell.detailTextLabel?.text = creature.detail
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let creature = creatures[tableView.indexPathForSelectedRow!.row]
+        indexOfCreature = tableView.indexPathForSelectedRow!.row
+        let creature = creatures[indexOfCreature]
         let dvc = segue.destination as! DetailViewController
         dvc.creature = creature
     }
 
+    @IBAction func save(sender: UIStoryboardSegue) {
+        if let dvc = sender.source as? DetailViewController {
+            creatures[indexOfCreature] = dvc.creature
+            tableView.reloadData()
+        }
+    }
 
 }
 
