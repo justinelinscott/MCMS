@@ -53,9 +53,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func addAccessoryButtonPressed(_ sender: UIButton) {
-        creature.accessories.append(accessoryTextField.text!)
+        if accessoryTextField.text == ""{
+            
+        } else { creature.accessories.append(accessoryTextField.text!)
             detailTableView.reloadData()
             accessoryTextField.text = ""
+        }
     }
     
     @IBAction func doubleTap(_ sender: UITapGestureRecognizer) {

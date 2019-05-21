@@ -8,9 +8,14 @@
 
 import UIKit
 
-class BattleViewController: UIViewController {
+class BattleViewController: UIViewController{
+    
+    @IBOutlet weak var firstTableView: UITableView!
+    @IBOutlet weak var secondTableView: UITableView!
+    
     
     var creatures: [MagicalCreatures] = []
+    var name: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,9 @@ class BattleViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+
+   
 
     /*
     // MARK: - Navigation
