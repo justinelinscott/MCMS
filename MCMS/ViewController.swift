@@ -23,11 +23,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let name1 = "dragon"
         let name2 = "griffon"
         let name3 = "dinosaur"
-        creatures = [MagicalCreatures(name: name1, detail: "purple"), MagicalCreatures(name: name2, detail: "yellow"), MagicalCreatures(name: name3, detail: "blue")]
+        creatures = [MagicalCreatures(name: name1, detail: "purple", image: UIImage(named: "dragon")!), MagicalCreatures(name: name2, detail: "yellow", image: UIImage(named: "griffon")!), MagicalCreatures(name: name3, detail: "blue", image: UIImage(named: "dinosaur")!)]
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        creatures.append(MagicalCreatures(name: newCreatureNameTextField.text!, detail: newCreatureDetailTextField.text!))
+        creatures.append(MagicalCreatures(name: newCreatureNameTextField.text!, detail: newCreatureDetailTextField.text!, image: UIImage(named: "noimage")!))
         newCreatureNameTextField.text = ""
         newCreatureDetailTextField.text = ""
         tableView.reloadData()

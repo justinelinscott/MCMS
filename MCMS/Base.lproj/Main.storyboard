@@ -151,6 +151,14 @@
                                     <segue destination="4Kf-Tk-9bm" kind="unwind" unwindAction="saveWithSender:" id="4TS-iE-7JY"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XyE-ma-rE6">
+                                <rect key="frame" x="87" y="506" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mTo-2b-FyU" appends="YES" id="YpI-H0-bnx"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -172,6 +180,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaT-fH-CKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4Kf-Tk-9bm" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="mTo-2b-FyU">
+                    <connections>
+                        <action selector="doubleTap:" destination="jcE-PK-dva" id="ArE-Zl-a18"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1492.753623188406" y="665.625"/>
         </scene>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
@@ -46,5 +46,14 @@ class DetailViewController: UIViewController {
             editTextField.text = ""
         }
     }
-
+    @IBAction func doubleTap(_ sender: UITapGestureRecognizer) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self
+            myPickerController.sourceType = .savedPhotosAlbum
+            myPickerController.allowsEditing = false
+            present(myPickerController, animated: true, completion: nil)
+        }
+    }
+    
 }
