@@ -77,6 +77,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-hU-8VS">
+                                <rect key="frame" x="177" y="772" width="60" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Battle"/>
+                                <connections>
+                                    <segue destination="DT3-j1-jeV" kind="show" identifier="battlesegue" id="qBa-us-APO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -96,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="666"/>
+            <point key="canvasLocation" x="805.79710144927537" y="665.625"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="cB0-Nu-7Ih">
@@ -185,6 +194,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KD-wi-7Ns">
+                                <rect key="frame" x="54" y="433" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addAccessoryButtonPressed:" destination="jcE-PK-dva" eventType="touchUpInside" id="gJq-ep-dxE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="accessory" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-bH-aVE">
+                                <rect key="frame" x="153" y="433" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -197,7 +221,9 @@
                         <viewLayoutGuide key="safeArea" id="oKw-3p-89L"/>
                     </view>
                     <connections>
+                        <outlet property="accessoryTextField" destination="Rbq-bH-aVE" id="mjv-Gi-Yld"/>
                         <outlet property="detailLabel" destination="Aiw-3x-uRk" id="DcH-lG-DE6"/>
+                        <outlet property="detailTableView" destination="PDW-W4-LIL" id="xH8-B9-khb"/>
                         <outlet property="detailTextField" destination="06j-lL-cGW" id="oxR-ON-3QP"/>
                         <outlet property="editButton" destination="Zif-9a-iq1" id="9lm-XA-IpZ"/>
                         <outlet property="editTextField" destination="74K-1f-mIN" id="lfb-5g-E0f"/>
@@ -206,14 +232,29 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaT-fH-CKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="4Kf-Tk-9bm" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="mTo-2b-FyU">
                     <connections>
                         <action selector="doubleTap:" destination="jcE-PK-dva" id="ArE-Zl-a18"/>
                     </connections>
                 </tapGestureRecognizer>
+                <exit id="4Kf-Tk-9bm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1492.753623188406" y="665.625"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="rWO-L6-oOj">
+            <objects>
+                <viewController id="DT3-j1-jeV" customClass="BattleViewController" customModule="MCMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zCv-so-R0w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zlm-8v-bOZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHE-t3-vv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2215" y="666"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GZW-fI-LCs">

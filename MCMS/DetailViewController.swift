@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var detailTextField: UITextField!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var accessoryTextField: UITextField!
+    @IBOutlet weak var detailTableView: UITableView!
     
     var creature: MagicalCreatures!
 
@@ -49,6 +51,13 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             editTextField.text = ""
         }
     }
+    
+    @IBAction func addAccessoryButtonPressed(_ sender: UIButton) {
+        creature.accessories.append(accessoryTextField.text!)
+            detailTableView.reloadData()
+            accessoryTextField.text = ""
+    }
+    
     @IBAction func doubleTap(_ sender: UITapGestureRecognizer) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let myPickerController = UIImagePickerController()
@@ -68,17 +77,13 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if creature.accessories == nil {
-            return 0
-        }
-        else {
-            return creature.accessories!.count
-        }
+        return creature.accessories.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID") as! UITableViewCell
-        cell.textLabel?.text = creature.accessories![indexPath.row]
+        cell.textLabel?.text = creature.accessories[indexPath.row]
         
         return cell
     }

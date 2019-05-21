@@ -15,7 +15,7 @@ class MagicalCreatures {
     var name: String
     var detail: String
     var image: UIImage
-    var accessories: [String]?
+    var accessories: [String] = []
     
     init(name: String, detail: String, image: UIImage) {
         self.name = name

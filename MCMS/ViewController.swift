@@ -48,10 +48,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? DetailViewController{
         indexOfCreature = tableView.indexPathForSelectedRow!.row
         let creature = creatures[indexOfCreature]
-        let dvc = segue.destination as! DetailViewController
         dvc.creature = creature
+        } else if let dvc = segue.destination as? BattleViewController{
+            dvc.creatures = creatures
+        }
     }
 
     @IBAction func save(sender: UIStoryboardSegue) {
