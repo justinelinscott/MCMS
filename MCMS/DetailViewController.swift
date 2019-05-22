@@ -28,7 +28,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         saveButton.isHidden = true
         title = creature.name
         detailLabel.text = creature.detail
-        detailLabel.sizeToFit()
+        //detailLabel.sizeToFit()
         imageView.image = creature.image
     }
     
